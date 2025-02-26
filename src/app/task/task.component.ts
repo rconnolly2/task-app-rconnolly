@@ -21,8 +21,8 @@ export class TaskComponent {
   @Input() task!: Task;
 
   getFormattedWeekday(): string {
-    const date = new Date(this.task.deadline + 'Z');
-    return date.toLocaleDateString('en-US', { weekday: 'long' });
+    const localDate = new Date(this.task.deadline.toLocaleString('en-US', { timeZone: 'Europe/Madrid' }));
+    return localDate.toLocaleDateString('en-US', { weekday: 'long' });
   }
 
   getFormattedTime(): string {

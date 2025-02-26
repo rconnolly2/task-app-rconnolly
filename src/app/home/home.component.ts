@@ -24,6 +24,7 @@ export class HomeComponent {
     this.wednesdayTaskList = this.taskService.getTasksByWeekDay(2);
     this.thursdayTaskList = this.taskService.getTasksByWeekDay(3);
     this.fridayTaskList = this.taskService.getTasksByWeekDay(4);
+    console.log(this.thursdayTaskList);
   }
 
   objectKeys(obj: { [key: number]: Task[] }): number[] {
