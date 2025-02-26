@@ -16,6 +16,15 @@ export class TaskService {
       completed: false
     },
     {
+      id: 0,
+      moduleId: 0,
+      name: 'Práctica de diseño de interfaces',
+      description: 'Modificar un diseño de interfaz para una web interactiva.',
+      deadline: new Date('2025-02-24T20:10:00'),
+      grade: undefined,
+      completed: true
+    },
+    {
       id: 1,
       moduleId: 1,
       name: 'Despliegue de aplicación en servidor',
