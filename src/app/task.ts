@@ -1,6 +1,6 @@
 export interface Task {
     id: number;
-    module_id: number;
+    moduleId: number;
     name: string;
     description: string;
     deadline: Date;

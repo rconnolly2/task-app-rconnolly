@@ -1,0 +1,18 @@
+<div class="module">
+    <div class="module-details">
+        <div class="details-left"><img src={{tutor?.profileImage}} alt="Profile picture"></div>
+        <div class="details-right">
+            <p class="module-title">{{module?.name}} | {{module?.course}}</p>
+            <p class="module-tutor">{{tutor?.firstName}} {{tutor?.surName}}</p>
+        </div>
+    </div>
+
+    <div class="task-list">
+        <app-task *ngFor="let task of taskModuleList" [task]="task"></app-task>
+    </div>
+
+    <div class="module-description">
+        <p>{{module?.description}}</p>
+        <button [routerLink]="['/module', module?.id]">OPEN</button><button [routerLink]="['/task-work', module?.id]">YOUR WORK</button>
+    </div>
+</div>

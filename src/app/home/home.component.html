@@ -6,78 +6,99 @@
         <div class="day-header">
             <h4>Monday <i class="fa fa-calendar"></i></h4>
         </div>
-        <div class="module">
-            <p>Tarea 1</p>
-            <p>Tarea 2</p>
-            <p>Tarea 3</p>
-            <button>OPEN</button><button>YOUR WORK</button>
-        </div>
-    </div>
-
-    <div class="day-tasks">
-        <div class="day-header">
-            <h4>Monday <i class="fa fa-calendar"></i></h4>
-        </div>
-        <div class="module">
-            <div class="module-details">
-                <div class="details-left"><img src="/assets/profile-photos/tutors/carlos.png" alt="Profile"></div>
-                <div class="details-right">
-                    <p class="module-title">Design of web interfaces | 2nd DAW 24-25</p>
-                    <p class="module-tutor">Beatriz Morales</p>
-                </div>
-            </div>
-
-            <div class="task-list">
-                <a href="#" class="task">
-                    <p class="due-date"><span class="due-date-title">Due date: </span>Monday</p>
-                    <p>9:00 [TASK] - 02 - Second version taskmanager</p>
-                </a>
-
-                <div class="task">
-                    <p class="due-date completed">COMPLETED</p>
-                    <p>11:00 [TASK] - 03 - Third version taskmanager</p>
-                </div>
-            </div>
-
-            <div class="module-description">
-                <p>Learn how to create visually engaging UI.</p>
-                <button>OPEN</button><button>YOUR WORK</button>
+        <div *ngIf="objectKeys(mondayTaskList).length > 0; else noTasks">
+            <div *ngFor="let moduleId of objectKeys(mondayTaskList)">
+                <app-day-task [taskModuleList]="mondayTaskList[moduleId]"></app-day-task>
             </div>
         </div>
-    </div>
 
-    <div class="day-tasks">
-        <div class="day-header">
-            <h4>Monday <i class="fa fa-calendar"></i></h4>
-        </div>
-        <div class="module">
-            <p>Tarea 1</p>
-            <p>Tarea 2</p>
-            <p>Tarea 3</p>
-            <button>OPEN</button><button>YOUR WORK</button>
-        </div>
-    </div>
-
-    <div class="day-tasks">
-        <div class="day-header">
-            <h4>Monday <i class="fa fa-calendar"></i></h4>
-        </div>
-        <p class="nothing">
+        <!-- Si la lista está vacía, muestro este mensaje -->
+        <ng-template #noTasks>
+            <p class="nothing">
             Nothing to do this day...<br>
             Sitback 💺<br>
             Relax 😊
-        </p>
+            </p>
+        </ng-template>
     </div>
 
     <div class="day-tasks">
         <div class="day-header">
-            <h4>Monday <i class="fa fa-calendar"></i></h4>
+            <h4>Tuesday <i class="fa fa-calendar"></i></h4>
         </div>
-        <div class="module">
-            <p>Tarea 1</p>
-            <p>Tarea 2</p>
-            <p>Tarea 3</p>
-            <button>OPEN</button><button>YOUR WORK</button>
+        <div *ngIf="objectKeys(tuesdayTaskList).length > 0; else noTasks">
+            <div *ngFor="let moduleId of objectKeys(tuesdayTaskList)">
+                <app-day-task [taskModuleList]="tuesdayTaskList[moduleId]"></app-day-task>
+            </div>
         </div>
+
+        <!-- Si la lista está vacía, muestro este mensaje -->
+        <ng-template #noTasks>
+            <p class="nothing">
+            Nothing to do this day...<br>
+            Sitback 💺<br>
+            Relax 😊
+            </p>
+        </ng-template>
+    </div>
+
+    <div class="day-tasks">
+        <div class="day-header">
+            <h4>Wednesday <i class="fa fa-calendar"></i></h4>
+        </div>
+        <div *ngIf="objectKeys(wednesdayTaskList).length > 0; else noTasks">
+            <div *ngFor="let moduleId of objectKeys(wednesdayTaskList)">
+                <app-day-task [taskModuleList]="wednesdayTaskList[moduleId]"></app-day-task>
+            </div>
+        </div>
+
+        <!-- Si la lista está vacía, muestro este mensaje -->
+        <ng-template #noTasks>
+            <p class="nothing">
+            Nothing to do this day...<br>
+            Sitback 💺<br>
+            Relax 😊
+            </p>
+        </ng-template>
+    </div>
+
+    <div class="day-tasks">
+        <div class="day-header">
+            <h4>Thursday <i class="fa fa-calendar"></i></h4>
+        </div>
+        <div *ngIf="objectKeys(thursdayTaskList).length > 0; else noTasks">
+            <div *ngFor="let moduleId of objectKeys(thursdayTaskList)">
+                <app-day-task [taskModuleList]="thursdayTaskList[moduleId]"></app-day-task>
+            </div>
+        </div>
+
+        <!-- Si la lista está vacía, muestro este mensaje -->
+        <ng-template #noTasks>
+            <p class="nothing">
+            Nothing to do this day...<br>
+            Sitback 💺<br>
+            Relax 😊
+            </p>
+        </ng-template>
+    </div>
+
+    <div class="day-tasks">
+        <div class="day-header">
+            <h4>Friday <i class="fa fa-calendar"></i></h4>
+        </div>
+        <div *ngIf="objectKeys(fridayTaskList).length > 0; else noTasks">
+            <div *ngFor="let moduleId of objectKeys(fridayTaskList)">
+                <app-day-task [taskModuleList]="fridayTaskList[moduleId]"></app-day-task>
+            </div>
+        </div>
+
+        <!-- Si la lista está vacía, muestro este mensaje -->
+        <ng-template #noTasks>
+            <p class="nothing">
+            Nothing to do this day...<br>
+            Sitback 💺<br>
+            Relax 😊
+            </p>
+        </ng-template>
     </div>
 </div>
