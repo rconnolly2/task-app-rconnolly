@@ -1,0 +1,50 @@
+.week-tasks {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    background-color: bisque;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.day-tasks {
+    background-color: azure;
+    width: 17vw;
+    height: 650px;
+}
+
+.day-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #a8d9e2;
+}
+
+.module {
+    background-color: white;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.429);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.module-details {
+    background-color: gray;
+}
+
+.details-left {
+    display: inline-block;
+    width: 20%;
+    height: 50px;
+    background-color: bisque;
+}
+
+.details-right {
+    display: inline-block;
+    width: 80%;
+    background-color: #a8d9e2;
+}
