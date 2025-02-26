@@ -5,14 +5,15 @@
     margin-bottom: 20px;
     display: flex;
     gap: 20px;
-    background-color: bisque;
     font-family: 'Open Sans', sans-serif;
 }
 
 .day-tasks {
     background-color: azure;
     width: 17vw;
-    height: 650px;
+    height: 900px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .day-header {
