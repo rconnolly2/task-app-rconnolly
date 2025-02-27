@@ -1,0 +1,40 @@
+.module-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.module-front-page {
+    margin-top: 15px;
+    width: 1300px;
+    background-color: #cde0e3;
+}
+
+.module-banner {
+    background-color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.module-banner img {
+    width: 100%;
+}
+
+.post {
+    background-color: #e3f2fd;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.profile-photo {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 50px;
+    width: 120px;
+    box-shadow: 2px 2px 4px black;
+}
