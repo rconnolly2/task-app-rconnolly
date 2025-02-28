@@ -1,16 +1,14 @@
 <div class="module-menu">
     <div class="module-homework">
         <div class="home-header">
-            <h2>Homework 📚</h2>
+          <h2>Homework 📚</h2>
         </div>
-
+    
         <div class="current-homework">
-            <p>Task 1</p>
-            <p>Task 1</p>
-            <p>Task 1</p>
+          <app-current-homework *ngIf="module" [module]="module"></app-current-homework>
         </div>
-
-        <h2>Show all</h2>
+    
+        <h2 id="show-all">Show all</h2>
     </div>
 
     <div class="module-front-page">
