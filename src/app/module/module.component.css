@@ -172,4 +172,16 @@ input[type="text"]:focus {
 }
 
 
+/* Componente de deberes sin hacer */
+.module-homework {
+    background-color: #cde0e3;
+    height: 250px;
+}
 
+.home-header {
+
+}
+
+.current-homework {
+    
+}
