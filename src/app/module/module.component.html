@@ -17,35 +17,64 @@
         <div class="module-banner"><img src="/assets/module-banners/diseño.png" alt="Banner del modulo"></div>
 
         <div class="post">
-            <div class="profile-photo">
-                <img src="/assets/profile-photos/beatriz.png" alt="Profile photo">
-                Beatriz Morales
+            <div class="profile-card">
+                <div class="profile-picture-div"><img src="/assets/profile-photos/tutors/beatriz.png" alt="Profile photo"></div><p>Beatriz Morales</p>
             </div>
 
             <div class="post-content">
                 <p>
                     Buenas tardes a todos,
-
+            
+                
                     Como pedisteis un poco la guía o la "chuletilla" de la lógica a seguir para diseñar la aplicación de Angular desde cero aquí os dejo un poco el esquema mental que deberíamos seguir:
+            
                     Tener claro cuantas ventas tenemos que diseñar (es decir, cuantas páginas HTML deberíamos de tener).
                     Pensar la interacción de ventanas (es decir, cual es el flujo que seguirá nuestra aplicación).
-                    ¿Cómo dividiré mis ventanas? ¿Mi ventana "X" puede estar comprimida toda en una única clase o componente? Si volvemos al ejemplo que hicimos en clase, nuestra página principal está compuesta de varias cosas. Tenemos el navbar en la parte superior, el home en la parte principal, ¿verdad?
-                    Y ahora el kit de la cuestión, ¿necesito crear una clase o un componente? Lo más fácil es pensar que si va a ser únicamente un contenedor de información nos baste con una clase, como "Food". En cambio, si tendrá lógica propia, si tendrá un estilo y carácter propio (CSS y HTML) entonces es un componente. En definitiva, si dudáis es porque seguramente sea un componente.
-                    Y finalmente, los servicios. Pese a no tener un backend, estamos cargando información. Por tanto, dicha carga se realizará en los servicios de cada uno de los elementos de nuestra aplicación. 
+                    ¿Cómo dividiré mis ventanas? ¿Mi ventana "X" puede estar comprimida toda en una única clase o componente?
+                    Si volvemos al ejemplo que hicimos en clase, nuestra página principal está compuesta de varias cosas. Tenemos el navbar en la parte superior, el home en la parte principal, ¿verdad?
+            
+                    Y ahora el kit de la cuestión, ¿necesito crear una clase o un componente? Lo más fácil es pensar que si va a ser únicamente un contenedor de información nos baste con una clase, como "Food".
+                    En cambio, si tendrá lógica propia, si tendrá un estilo y carácter propio (CSS y HTML) entonces es un componente. En definitiva, si dudáis es porque seguramente sea un componente.
+            
+                    Y finalmente, los servicios. Pese a no tener un backend, estamos cargando información. Por tanto, dicha carga se realizará en los servicios de cada uno de los elementos de nuestra aplicación.
                     A medida que avancemos iré actualizando esto (si fuese necesario). Cualquier cosa ya sabéis.
-
+            
                     ¡Ánimos!
                 </p>
 
-                <div id="optional-image"><img src="" alt="Imagen"></div>
+                <img id="optional-image" src="/assets/module-banners/diseño.png" alt="Post Image">
             </div>
 
             <div class="comment-section">
-                <div class="new-comment">
-                    <form action="" method="post">
-                        <input type="text" placeholder="Message..."><input type="submit" value="Send">
-                    </form>
+                <div class="comments">
+                    <div class="comment">
+                        <div class="comment-left"><img src="/assets/profile-photos/tutors/beatriz.png" alt="Profile photo"></div>
+                        <div class="comment-right">
+                            <p class="comment-author">Mateo Daniel Soliz Ruedap <span>10 de febr.</span></p>
+                            <p class="comment-content">PokeApi (La de ejemplo)dddddddddddddddddddddd</p>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment-left"><img src="/assets/profile-photos/tutors/beatriz.png" alt="Profile photo"></div>
+                        <div class="comment-right">
+                            <p class="comment-author">Mateo Daniel Soliz Ruedap <span>10 de febr.</span></p>
+                            <p class="comment-content">PokeApi (La de ejemplo)dddddddddddddddddddddd</p>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment-left"><img src="/assets/profile-photos/tutors/beatriz.png" alt="Profile photo"></div>
+                        <div class="comment-right">
+                            <p class="comment-author">Mateo Daniel Soliz Ruedap <span>10 de febr.</span></p>
+                            <p class="comment-content">PokeApi (La de ejemplo)dddddddddddddddddddddd</p>
+                        </div>
+                    </div>
                 </div>
+
+                <form class="new-comment" action="" method="post">
+                    <input type="text" placeholder="Message..."><input type="submit" value="Send">
+                </form>
             </div>
         </div>
 
