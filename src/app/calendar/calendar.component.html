@@ -1,1 +1,8 @@
-<p>calendar works!</p>
+<div class="calendar-page">
+    <mat-card class="demo-inline-calendar-card">
+      <mat-calendar [(selected)]="selected"></mat-calendar>
+    </mat-card>
+  
+    <p *ngIf="selected">Selected date: {{ selected | date: 'fullDate' }}</p>
+</div>
+  

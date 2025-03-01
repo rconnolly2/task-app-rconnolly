@@ -1,0 +1,15 @@
+.calendar-page {
+    width: 100%;
+    max-width: 300px;  /* Make the calendar smaller */
+    margin: 0;  /* Remove centering margin */
+    padding: 20px;
+    text-align: left;  /* Align text to the left */
+}
+  
+mat-form-field {
+    width: 100%;
+}
+
+p {
+    margin: 10px 0;
+}
