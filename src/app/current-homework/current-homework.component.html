@@ -11,6 +11,7 @@
   
     <div class="task-list">
       <app-task *ngFor="let task of taskModuleList" [task]="task"></app-task>
+      <p *ngIf="taskModuleList.length === 0">Congratulations! You have no tasks! 🎉🎊</p>
     </div>
   
     <div class="module-description">
@@ -20,6 +21,5 @@
   
 <!-- Si no se recibe un módulo -->
 <ng-template #noModule>
-<p>No hay información de módulo disponible.</p>
+  <p>No hay información de módulo disponible.</p>
 </ng-template>
-  
