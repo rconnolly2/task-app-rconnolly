@@ -10,7 +10,7 @@ export class StudentService {
       id: 1,
       firstName: 'Mateo Daniel',
       surName: 'Soliz Rueda',
-      profileImage: '/assets/profile-photos/students/mateo_daniel1.jpg'
+      profileImage: '/assets/profile-photos/students/mateo.jpg'
     },
     {
       id: 2,
@@ -46,7 +46,7 @@ export class StudentService {
       id: 7,
       firstName: 'Sergio',
       surName: 'Gómez Olivares',
-      profileImage: '/assets/profile-photos/students/sergio.jpg'
+      profileImage: '/assets/profile-photos/students/sergio.png'
     },
     {
       id: 8,

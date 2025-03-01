@@ -98,4 +98,16 @@ export class CommentService {
       return commentDate >= startDate && commentDate <= endDate;
     });
   }
+
+  addComment(postId: number, studentId: number, content: string): void {
+    const newComment: Comment = {
+      id: this.commentList.length,
+      postId: postId,
+      studentId: studentId,
+      content: content,
+      date: new Date()
+    };
+
+    this.commentList.push(newComment);
+  }
 }

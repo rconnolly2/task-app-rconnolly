@@ -11,7 +11,7 @@ export class PostService {
       content: 'Primer post sobre desarrollo de interfaces web, cubriendo los fundamentos del diseño UX/UI.',
       moduleId: 0,
       date: new Date('2025-02-20T08:30:00'),
-      imageUrl: '/assets/images/ux-ui-design.png'
+      imageUrl: '/assets/post-photos/git.PNG'
     },
     {
       id: 1,
@@ -24,13 +24,14 @@ export class PostService {
       content: 'Desarrollo de bases de datos para servidores, optimizando el rendimiento en entornos de producción.',
       moduleId: 2,
       date: new Date('2025-02-22T10:15:00'),
-      imageUrl: '/assets/images/database-design.png'
+      imageUrl: '/assets/post-photos/dev-db.gif'
     },
     {
       id: 3,
       content: 'Introducción a la creación de aplicaciones web interactivas utilizando tecnologías del lado cliente.',
       moduleId: 3,
-      date: new Date('2025-02-23T11:45:00')
+      date: new Date('2025-02-23T11:45:00'),
+      imageUrl: '/assets/post-photos/arbol_jose.jpg'
     },
     {
       id: 4,
@@ -43,7 +44,7 @@ export class PostService {
       content: 'Reflexión sobre las mejores prácticas en el diseño responsivo de interfaces web.',
       moduleId: 0,
       date: new Date('2025-02-26T15:00:00'),
-      imageUrl: '/assets/images/responsive-design.png'
+      imageUrl: '/assets/post-photos/responsive.png'
     },
     {
       id: 6,
@@ -56,7 +57,7 @@ export class PostService {
       content: 'Prácticas recomendadas en el desarrollo de aplicaciones web en entornos de servidor utilizando Node.js.',
       moduleId: 2,
       date: new Date('2025-02-28T17:00:00'),
-      imageUrl: '/assets/images/nodejs-development.png'
+      imageUrl: '/assets/post-photos/node.jpg'
     },
     {
       id: 8,

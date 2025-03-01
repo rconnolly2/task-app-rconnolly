@@ -1,0 +1,41 @@
+
+.comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 70px;
+}
+
+.comment-left {
+    display: inline-block;
+    width: 7%;
+}
+
+.comment-left img {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+}
+
+.comment-right {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 95%;
+}
+
+.comment-right p, span {
+    margin: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment-author {
+    font-weight: 600;
+}
+
+.comment-author span {
+    font-size: 12px;
+    color: #6a6a6a;
+}
