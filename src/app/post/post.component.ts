@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { Post } from '../post';
 import { ModuleService } from '../module.service';
 import { TutorService } from '../tutor.service';
-import { Module } from '../module';
-import { Tutor } from '../tutor';
-import { Comment } from '../comment';
 import { CommentService } from '../comment.service';
 import { CommentComponent } from '../comment/comment.component';
+import { NewCommentComponent } from '../new-comment/new-comment.component';
+import { Tutor } from '../tutor';
+import { Comment } from '../comment';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [CommonModule, CommentComponent],
+  imports: [CommonModule, CommentComponent, NewCommentComponent],
   template: `
     <div class="post" *ngIf="tutor">
       <div class="profile-card">
@@ -32,9 +32,11 @@ import { CommentComponent } from '../comment/comment.component';
           <app-comment [comment]="comment"></app-comment>
         </div>
 
-        <form class="new-comment" action="" method="post">
-          <input type="text" placeholder="Message..."><input type="submit" value="Send">
-        </form>
+        <app-new-comment 
+          [postId]="post.id" 
+          [studentId]="studentId" 
+          (commentAdded)="loadComments()">
+        </app-new-comment>
       </div>
     </div>
   `,
@@ -44,6 +46,7 @@ export class PostComponent implements OnInit {
   @Input() post!: Post;
   tutor?: Tutor;
   comments: Comment[] = [];
+  studentId: number = 3;
 
   constructor(
     private moduleService: ModuleService,
@@ -56,6 +59,10 @@ export class PostComponent implements OnInit {
     if (module) {
       this.tutor = this.tutorService.getTutorById(module.tutorId);
     }
+    this.loadComments();
+  }
+
+  loadComments(): void {
     this.comments = this.commentService.getCommentsByPostId(this.post.id);
   }
 }
