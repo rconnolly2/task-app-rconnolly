@@ -28,4 +28,3 @@ export class ModuleComponent implements OnInit {
     });
   }
 }
-

@@ -1,10 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Input } from '@angular/core';
 import { TaskService } from '../task.service';
 import { TutorService } from '../tutor.service';
 import { Task } from '../task';
 import { Module } from '../module';
 import { Tutor } from '../tutor';
+import { CommonModule } from '@angular/common';
 import { TaskComponent } from '../task/task.component';
 
 @Component({
@@ -18,6 +18,7 @@ export class CurrentHomeworkComponent implements OnInit {
   @Input() module?: Module;
   taskModuleList: Task[] = [];
   tutor?: Tutor;
+  showAllTasks = false;
 
   constructor(
     private taskService: TaskService,
@@ -26,15 +27,16 @@ export class CurrentHomeworkComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.module) {
-      this.loadIncompleteTasksForModule();
+      this.loadTasksForModule();
       this.loadTutorForModule();
     }
   }
 
-  loadIncompleteTasksForModule(): void {
+  loadTasksForModule(): void {
     if (this.module) {
       this.taskModuleList = this.taskService.getAllTasks().filter(task => 
-        task.moduleId === this.module!.id && !task.completed
+        task.moduleId === this.module!.id && 
+        (this.showAllTasks || !task.completed)
       );
     }
   }
@@ -43,5 +45,10 @@ export class CurrentHomeworkComponent implements OnInit {
     if (this.module) {
       this.tutor = this.tutorService.getTutorById(this.module.tutorId);
     }
+  }
+
+  toggleShowAllTasks(): void {
+    this.showAllTasks = !this.showAllTasks;
+    this.loadTasksForModule();
   }
 }
