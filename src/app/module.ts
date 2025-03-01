@@ -4,4 +4,5 @@ export interface Module {
     name: string;
     course: string;
     description: string;
+    banner: string;
 }
