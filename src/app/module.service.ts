@@ -12,7 +12,7 @@ export class ModuleService {
       name: '0615. Diseño de interfaces web',
       course: '2º DAW 2024-2025',
       description: 'Creación de interfaces atractivas y funcionales para aplicaciones web.',
-      banner: '/assets/module-banners/diseno.png'
+      banner: '/assets/module-banners/diseño.png'
     },
     {
       id: 1,

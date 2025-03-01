@@ -4,4 +4,4 @@ export interface Post {
     moduleId: number;
     date: Date;
     imageUrl?: string;
-}  
+}
