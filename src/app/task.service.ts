@@ -39,7 +39,7 @@ export class TaskService {
       moduleId: 2,
       name: 'Desarrollo de bases de datos',
       description: 'Diseñar y desarrollar una base de datos para la aplicación.',
-      deadline: new Date('2025-02-27T23:59:00'),
+      deadline: new Date('2025-02-20T23:59:00'),
       grade: undefined,
       completed: false
     },
@@ -120,26 +120,27 @@ export class TaskService {
     return tasksByModule;
   }
 
-  getTasksForWeekAndModules(weekStartDate: Date, selectedModules: Module[]): { [moduleId: number]: Task[] } {
+  getTasksByWeekDayAndModules(currentDate: Date, dayOfWeek: number, selectedModules: Module[]): { [moduleId: number]: Task[] } {
     const tasksByModule: { [moduleId: number]: Task[] } = {};
 
-    const weekStartDay = new Date(weekStartDate);
-    const weekEndDay = new Date(weekStartDate);
-    weekEndDay.setDate(weekStartDay.getDate() + 7);  // Definir el final de la semana
+    const startOfWeek = new Date(currentDate);
+    startOfWeek.setDate(currentDate.getDate() - ((currentDate.getDay() + 6) % 7));
+    startOfWeek.setHours(0, 0, 0, 0);
 
-    // Filtrar las tareas para la semana seleccionada y los módulos seleccionados
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+
     this.taskList.filter(task => {
-      const taskDate = new Date(task.deadline);
-      const taskDay = taskDate.getDay(); // Día de la semana (0 - domingo, 6 - sábado)
-      const isInSelectedWeek = taskDate >= weekStartDay && taskDate <= weekEndDay;
-      const isInSelectedModules = selectedModules.some(module => module.id === task.moduleId);
-      
-      return isInSelectedWeek && isInSelectedModules;
+        const taskDate = new Date(task.deadline);
+        const taskDay = (taskDate.getDay() + 6) % 7;
+        return taskDate >= startOfWeek && taskDate <= endOfWeek
+            && selectedModules.some(module => module.id === task.moduleId)
+            && taskDay === dayOfWeek;
     }).forEach(task => {
-      if (!tasksByModule[task.moduleId]) {
-        tasksByModule[task.moduleId] = [];
-      }
-      tasksByModule[task.moduleId].push(task);
+        if (!tasksByModule[task.moduleId]) {
+            tasksByModule[task.moduleId] = [];
+        }
+        tasksByModule[task.moduleId].push(task);
     });
 
     return tasksByModule;
