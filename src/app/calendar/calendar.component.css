@@ -13,3 +13,16 @@ mat-form-field {
 p {
     margin: 10px 0;
 }
+
+.div-tools {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-end;
+}
+
+.module-filters {
+    padding: 20px;
+    width: 400px;
+    vertical-align: bottom;
+}

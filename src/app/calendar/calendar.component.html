@@ -1,8 +1,9 @@
-<div class="calendar-page">
-    <mat-card class="demo-inline-calendar-card">
-      <mat-calendar [(selected)]="selected"></mat-calendar>
-    </mat-card>
-  
-    <p *ngIf="selected">Selected date: {{ selected | date: 'fullDate' }}</p>
+<div class="div-tools">
+    <div class="calendar-page">
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar [(selected)]="selected"></mat-calendar>
+        </mat-card>
+    </div>
+
+    <app-module-filter class="module-filters" [selectedModules]="selectedModules"></app-module-filter>
 </div>
-  

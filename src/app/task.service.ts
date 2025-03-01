@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Task } from './task';
+import { Module } from './module';
 
 @Injectable({
   providedIn: 'root'
@@ -110,6 +111,31 @@ export class TaskService {
     });
 
     tasksOnDay.forEach(task => {
+      if (!tasksByModule[task.moduleId]) {
+        tasksByModule[task.moduleId] = [];
+      }
+      tasksByModule[task.moduleId].push(task);
+    });
+
+    return tasksByModule;
+  }
+
+  getTasksForWeekAndModules(weekStartDate: Date, selectedModules: Module[]): { [moduleId: number]: Task[] } {
+    const tasksByModule: { [moduleId: number]: Task[] } = {};
+
+    const weekStartDay = new Date(weekStartDate);
+    const weekEndDay = new Date(weekStartDate);
+    weekEndDay.setDate(weekStartDay.getDate() + 7);  // Definir el final de la semana
+
+    // Filtrar las tareas para la semana seleccionada y los módulos seleccionados
+    this.taskList.filter(task => {
+      const taskDate = new Date(task.deadline);
+      const taskDay = taskDate.getDay(); // Día de la semana (0 - domingo, 6 - sábado)
+      const isInSelectedWeek = taskDate >= weekStartDay && taskDate <= weekEndDay;
+      const isInSelectedModules = selectedModules.some(module => module.id === task.moduleId);
+      
+      return isInSelectedWeek && isInSelectedModules;
+    }).forEach(task => {
       if (!tasksByModule[task.moduleId]) {
         tasksByModule[task.moduleId] = [];
       }

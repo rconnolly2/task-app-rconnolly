@@ -3,6 +3,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
+import { ModuleFilterComponent } from '../module-filter/module-filter.component';
+import { Module } from '../module';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
@@ -15,11 +17,13 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
     MatDatepickerModule,
     MatNativeDateModule,
     CommonModule,
+    ModuleFilterComponent
   ]
 })
 export class CalendarComponent {
-  selected: Date | null = null;
+  selected: Date | null = new Date();
   selectedWeek: { start: Date, end: Date } | null = null;
+  selectedModules: Module[] = [];
 
   onDateSelected(event: MatDatepickerInputEvent<Date>): void {
     const date = event.value;
