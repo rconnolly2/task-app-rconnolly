@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ModuleService } from '../module.service';
 import { Module } from '../module';  
 import { CommonModule } from '@angular/common';
@@ -23,13 +23,15 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class ModuleFilterComponent implements OnInit {
   @Input() selectedModules: Module[] = [];
+  @Output() modulesUpdated = new EventEmitter<Module[]>();
   modules: Module[] = [];
 
   constructor(private moduleService: ModuleService) { }
 
   ngOnInit(): void {
     this.modules = this.moduleService.getAllModules();
-    this.selectedModules = [...this.modules];  // Select all modules by default
+    this.selectedModules = [...this.modules];
+    this.modulesUpdated.emit(this.selectedModules);
   }
 
   toggleSelection(module: Module): void {
@@ -39,5 +41,6 @@ export class ModuleFilterComponent implements OnInit {
     } else {
       this.selectedModules.push(module);
     }
+    this.modulesUpdated.emit(this.selectedModules);
   }
 }

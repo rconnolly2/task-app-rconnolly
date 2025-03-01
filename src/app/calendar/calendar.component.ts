@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -20,17 +20,30 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
     ModuleFilterComponent
   ]
 })
-export class CalendarComponent {
+export class CalendarComponent implements OnInit {
   selected: Date | null = new Date();
   selectedWeek: { start: Date, end: Date } | null = null;
   selectedModules: Module[] = [];
 
-  onDateSelected(event: MatDatepickerInputEvent<Date>): void {
-    const date = event.value;
+  ngOnInit(): void {
+    console.log("Fecha seleccionada:", this.selected);
+    console.log("Módulos filtrados:", this.selectedModules);
+  }
+
+  onDateSelected(date: Date): void {
     this.selected = date;
     if (date) {
       this.selectedWeek = this.getWeekRange(date);
+      console.log("Fecha seleccionada:", this.selected);
+      console.log("Rango de la semana:", this.selectedWeek);
     }
+  }
+
+  onModulesUpdated(modules: Module[]): void {
+    setTimeout(() => {
+      this.selectedModules = modules;
+      console.log("Módulos filtrados:", this.selectedModules);
+    }, 0);
   }
 
   getWeekRange(date: Date): { start: Date, end: Date } {

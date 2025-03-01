@@ -1,9 +1,12 @@
 <div class="div-tools">
-    <div class="calendar-page">
-        <mat-card class="demo-inline-calendar-card">
-          <mat-calendar [(selected)]="selected"></mat-calendar>
-        </mat-card>
-    </div>
+  <div class="calendar-page">
+    <mat-card class="demo-inline-calendar-card">
+      <mat-calendar [(selected)]="selected" (selectedChange)="onDateSelected($event)"></mat-calendar>
+    </mat-card>
+  </div>
 
-    <app-module-filter class="module-filters" [selectedModules]="selectedModules"></app-module-filter>
+  <app-module-filter class="module-filters" 
+    [selectedModules]="selectedModules" 
+    (modulesUpdated)="onModulesUpdated($event)">
+  </app-module-filter>
 </div>
