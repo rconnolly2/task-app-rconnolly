@@ -3,11 +3,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
-import { ModuleFilterComponent } from '../module-filter/module-filter.component';
-import { Module } from '../module';
-import { Task } from '../task';
-import { TaskService } from '../task.service';
-import { DayTaskComponent } from '../day-task/day-task.component';
+import { ModuleFilterComponent } from '../components/module-filter/module-filter.component';
+import { Module } from '../interfaces/module';
+import { Task } from '../interfaces/task';
+import { TaskService } from '../services/task.service';
+import { DayTaskComponent } from '../components/day-task/day-task.component';
 
 @Component({
   selector: 'app-calendar',

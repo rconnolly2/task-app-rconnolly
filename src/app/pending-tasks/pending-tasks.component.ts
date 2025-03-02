@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../task.service';
-import { Task } from '../task';
-import { ModuleService } from '../module.service';
+import { TaskService } from '../services/task.service';
+import { Task } from '../interfaces/task';
+import { ModuleService } from '../services/module.service';
 import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';

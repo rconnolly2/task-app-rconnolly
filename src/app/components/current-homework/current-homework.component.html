@@ -1,0 +1,29 @@
+<div class="module" *ngIf="module; else noModule">
+  <div class="module-details">
+    <div class="details-left">
+      <img *ngIf="tutor?.profileImage" [src]="tutor?.profileImage" alt="Profile picture">
+    </div>
+    <div class="details-right">
+      <p class="module-title">{{ module.name }} | {{ module.course }}</p>
+      <p class="module-tutor">{{ tutor?.firstName }} {{ tutor?.surName }}</p>
+    </div>
+  </div>
+
+  <div class="task-list">
+    <app-task *ngFor="let task of taskModuleList" [task]="task"></app-task>
+    <p *ngIf="taskModuleList.length === 0">Congratulations! You have no tasks! 🎉🎊</p>
+  </div>
+
+  <div class="module-description">
+    <p>{{ module.description }}</p>
+  </div>
+  <!-- Botón para alternar entre mostrar todas las tareas o solo las incompletas -->
+  <button class="btn-all-task" (click)="toggleShowAllTasks()">
+  {{ showAllTasks ? 'Show Incomplete' : 'Show All Tasks' }}
+  </button>
+</div>
+
+<!-- Si no se recibe un módulo -->
+<ng-template #noModule>
+  <p>No hay información de módulo disponible.</p>
+</ng-template>

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ModuleService } from '../module.service';
-import { Module } from '../module';
-import { CurrentHomeworkComponent } from '../current-homework/current-homework.component';
+import { ModuleService } from '../services/module.service';
+import { Module } from '../interfaces/module';
+import { CurrentHomeworkComponent } from '../components/current-homework/current-homework.component';
 import { CommonModule } from '@angular/common';
-import { PostComponent } from '../post/post.component';
-import { PostService } from '../post.service';
-import { Post } from '../post';
+import { PostComponent } from '../components/post/post.component';
+import { PostService } from '../services/post.service';
+import { Post } from '../interfaces/post';
 
 @Component({
   selector: 'app-module',

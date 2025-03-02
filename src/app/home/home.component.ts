@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { Task } from '../task';
-import { TaskService } from '../task.service';
-import { DayTaskComponent } from '../day-task/day-task.component';
+import { Task } from '../interfaces/task';
+import { TaskService } from '../services/task.service';
+import { DayTaskComponent } from '../components/day-task/day-task.component';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,0 +1,18 @@
+.task {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+#description {
+    text-decoration: underline;
+}
+
+.due-date-title, .completed {
+    font-weight: 500;
+}
+
+.completed {
+    color: #3b913e;
+}

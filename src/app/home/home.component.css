@@ -10,8 +10,8 @@
 
 .day-tasks {
     background-color: azure;
-    width: 17vw;
     height: 900px;
+    width: 340px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
