@@ -35,45 +35,63 @@ Basically, the biggest problem was the time invested in styling the application 
 
 Also, in the later stage of the web app, I started using Angular Material for the calendar and dialogs, and it was challenging to understand and get it to work. At the beginning, I was a bit lost on how Angular worked, but I found some really good tutorials to get the basics and started to fully understand and do everything. Here is the official course I followed: [https://angular.dev/tutorials/first-app](https://angular.dev/tutorials/first-app)
 
+## Project structure
+
+![File structure 1](/docs/img/file-structure-1.png)
+
+The project structure is as follows: first, Angular stores all the code inside the `src` folder. In here, we can find two important folders. The `assets` folder stores all the images in three subfolders: `module-banners`, `post-photos`, and `profile-pictures`. Next to `assets`, we have the `app` folder.
+
+![File structure 3](/docs/img/file-structure-3.png)
+
+Then, in `src`, as we said before, we have all the code for our web app. I decided to organize it in the following way: since I didn’t have much idea of the correct way of doing it, I decided that the components that act like independent pages will be placed outside, while the components will be located in the `components` folder, like the image shows. Then, the interfaces will be located inside the `interfaces` folder, and the services inside the `services` folder. 
+
+The menu (navbar) is a component and is also located in the `components` folder. For the defined routes, I have them defined inside `app.routes.ts`, and the styles for each component have their own stylesheet. Also, some components, like the task line component, since it has such little HTML, I decided not to use a separate HTML file and instead put it inline, as I have seen in the official Angular course recommending it.
+
+![File structure 2](/docs/img/file-structure-2.png)
+
+
+## Component structure
+
+Next, I will explain how the project is organized with this UML component diagram. Basically, everything that falls under `app` is what gets executed when you run `npm run`. In `app.component.html`, I call the `menu-header` component, which then redirects to the different pages, each of which is also a component.  
+
+For example, on the home page, I call the `home` component. This component has its own static HTML and CSS but also calls another component, `day-task`, for each white module div you see on the screen.
+
+![Component diagram project](/docs/diagram/component-diagram.png)
+
+Then this `day-task`, as you see below, contains another component called `task` for each individual task you see underlined. Since in the module square there can be multiple tasks, if there are, for example, two tasks for the same module on the same day, each will be represented as a separate `task` component.
+
+![Components visualized](/docs/img/comp-1.png)
+
+This happens with basically everything—the comment system I made for viewing and making comments, the `home-work` component, the `module-filter` component, etc...
+
+After understanding that the components basically call each other, creating a chain-like relationship, I would like to explain the services. As shown in the UML component diagram, we have services for `student`, `tutor`, `module`, `task`, and `post`. The service basically acts like a CRUD class for defining the list of objects. For persistence, I made some of these services use `localStorage`, as you can see in this screenshot:
+
+![localStorage Screenshot](/docs/img/localstorage.png)
+
+## Calendar Page Logic
+
+Since I already explained how the Home page works, I’m going to explain how the Calendar works.  
+
+Basically, I have two services: `ModuleService` and `TaskService`. The `CalendarComponent` calls the `TaskService` and retrieves tasks for each day of the week based on the selected date in the calendar and the selected subjects from the `ModuleFilterComponent`.  
+
+Then, the `DayTaskComponent` calls the `TaskComponent` to display the line tasks, just like in the Home page. So, I’m essentially reusing these two components but fetching tasks from the service differently.  
+
+Also, I want to remark that I have two interfaces, `Task` and `Module`, because they enforce object instantiation with the properties defined by the interface. This works similarly to Java and abstract classes.
+
+![UML Diagrama Calendar](/docs/diagram/calendar.png)
+
+## Running
+
+To install dependencies run:
 
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+This will install and download all the necessary libraries/dependencies.  
+
+Then, to run, do:
 
 ```bash
-ng generate --help
+npm start
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
