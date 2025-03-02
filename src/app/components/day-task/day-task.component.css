@@ -77,4 +77,10 @@
     margin-right: 6px;
     font-size: 12px;
     margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.module-description button:hover {
+    transition-duration: 0.3s;
+    background-color: #a8d9e292;
 }
