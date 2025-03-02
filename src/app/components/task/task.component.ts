@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
-import { Task } from '../task';
+import { Task } from '../../interfaces/task';
 import { CommonModule } from '@angular/common';
 
 @Component({

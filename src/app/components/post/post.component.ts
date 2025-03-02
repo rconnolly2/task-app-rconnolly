@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Post } from '../post';
-import { ModuleService } from '../module.service';
-import { TutorService } from '../tutor.service';
-import { CommentService } from '../comment.service';
+import { Post } from '../../interfaces/post';
+import { ModuleService } from '../../services/module.service';
+import { TutorService } from '../../services/tutor.service';
+import { CommentService } from '../../services/comment.service';
 import { CommentComponent } from '../comment/comment.component';
 import { NewCommentComponent } from '../new-comment/new-comment.component';
-import { Tutor } from '../tutor';
-import { Comment } from '../comment';
+import { Tutor } from '../../interfaces/tutor';
+import { Comment } from '../../interfaces/comment';
 
 @Component({
   selector: 'app-post',

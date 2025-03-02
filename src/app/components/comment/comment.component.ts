@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { StudentService } from '../student.service';
-import { Student } from '../student';
-import { Comment } from '../comment';  
+import { StudentService } from '../../services/student.service';
+import { Student } from '../../interfaces/student';
+import { Comment } from '../../interfaces/comment';  
 import { CommonModule } from '@angular/common';
 
 @Component({

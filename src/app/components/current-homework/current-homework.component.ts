@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TaskService } from '../task.service';
-import { TutorService } from '../tutor.service';
-import { Task } from '../task';
-import { Module } from '../module';
-import { Tutor } from '../tutor';
+import { TaskService } from '../../services/task.service';
+import { TutorService } from '../../services/tutor.service';
+import { Task } from '../../interfaces/task';
+import { Module } from '../../interfaces/module';
+import { Tutor } from '../../interfaces/tutor';
 import { CommonModule } from '@angular/common';
 import { TaskComponent } from '../task/task.component';
 

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Input } from '@angular/core';
-import { Task } from '../task';
-import { Tutor } from '../tutor';
-import { ModuleService } from '../module.service';
-import { TutorService } from '../tutor.service';
-import { Module } from '../module';
+import { Task } from '../../interfaces/task';
+import { Tutor } from '../../interfaces/tutor';
+import { ModuleService } from '../../services/module.service';
+import { TutorService } from '../../services/tutor.service';
+import { Module } from '../../interfaces/module';
 import { RouterLink } from '@angular/router';
 import { TaskComponent } from '../task/task.component';
 

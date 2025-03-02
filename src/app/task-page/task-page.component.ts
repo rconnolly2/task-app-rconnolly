@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TaskService } from '../task.service';
-import { Task } from '../task';
+import { TaskService } from '../services/task.service';
+import { Task } from '../interfaces/task';
 import { CommonModule } from '@angular/common';
-import { Tutor } from '../tutor';
-import { TutorService } from '../tutor.service';
-import { ModuleService } from '../module.service';
+import { Tutor } from '../interfaces/tutor';
+import { TutorService } from '../services/tutor.service';
+import { ModuleService } from '../services/module.service';
 
 @Component({
   selector: 'app-task-page',

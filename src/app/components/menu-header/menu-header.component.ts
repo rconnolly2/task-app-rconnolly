@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AddClassDialogComponent } from '../add-class-dialog/add-class-dialog.component';
-import { TaskService } from '../task.service';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'menu-header',

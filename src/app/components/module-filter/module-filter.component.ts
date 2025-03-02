@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { ModuleService } from '../module.service';
-import { Module } from '../module';  
+import { ModuleService } from '../../services/module.service';
+import { Module } from '../../interfaces/module';  
 import { CommonModule } from '@angular/common';
 import { MatChipsModule } from '@angular/material/chips';
 
