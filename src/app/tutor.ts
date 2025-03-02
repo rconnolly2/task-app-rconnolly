@@ -5,4 +5,5 @@ export interface Tutor {
     email: string;
     tutor: boolean;
     profileImage: string;
+    visible: boolean;
 }

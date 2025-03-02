@@ -1,0 +1,101 @@
+.modal-task {
+    display: flex;
+    width: 700px;
+    justify-content: center;
+    gap: 20px;
+    background-color: white;
+    border: 0px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.422);
+    margin: auto; 
+}
+
+.your-work {
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.422);
+    height: 130px;
+    width: 300px;
+    padding: 20px;
+}
+
+.your-work h3 {
+    font-weight: 400;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.add-work {
+    display: flex;
+    justify-content: center;
+    color: #1a73e8;
+    font-weight: 500;
+    font-size: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid rgba(186, 186, 186, 0.498);
+}
+
+.done-btn {
+    display: flex;
+    justify-content: center;
+    background-color: #1a73e8;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    
+}
+
+.hover-enabled:hover {
+    background-color: #1a73e88f;
+    transition-duration: 0.2s;
+}
+
+.completed {
+    background-color: #1a73e88f;
+}
+
+.details h2 {
+    font-weight: 500;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+    width: 340px;
+}
+
+.tutor-email {
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+    width: 340px;
+}
+
+.extra-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.task-description {
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+    width: 340px;
+}
+
+.comment-class {
+    font-size: 13px;
+    color: #1a73e8;
+}

@@ -1,0 +1,31 @@
+<br><br>
+<div class="modal-task">
+    <div class="details">
+        <h2>{{task?.name}}</h2>
+        <p class="tutor-email">{{tutor?.firstName}} {{tutor?.surName}} • {{tutor?.email}}</p>
+        <div class="extra-details">
+            <span>100 Points</span><span>Deadline of task: {{task?.deadline?.getDate()}}/{{task?.deadline?.getMonth()}}/{{task?.deadline?.getFullYear()}}</span>
+        </div>
+        <hr>
+        <p class="task-description">{{task?.description}}</p>
+        <hr>
+        <div class="comment-class">
+            <span><i class="fa fa-users"></i> Comments of the class</span>
+        </div>
+    </div>
+
+    <div class="your-work">
+        <h3>Your work</h3>
+        <div class="add-work">
+            + Add or create your work
+        </div>
+
+        <div 
+        class="done-btn" 
+        [class.completed]="task?.completed"
+        [class.hover-enabled]="!task?.completed"
+        (click)="markTaskAsCompleted()">
+        {{ task?.completed ? 'Completed' : 'Mark as done' }}
+        </div>
+    </div>
+</div>

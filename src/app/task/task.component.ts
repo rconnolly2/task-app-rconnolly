@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-task',
   imports: [CommonModule],
   template: `
-    <a href="#" class="task">
+    <a href="/task/{{task.id}}" class="task">
       <p class="due-date" [ngClass]="{ 'completed': task.completed }">
         <span *ngIf="!task.completed" class="due-date-title">Due date: </span>
         {{ task.completed ? 'COMPLETED' : getFormattedWeekday() }}

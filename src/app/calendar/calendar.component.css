@@ -1,0 +1,68 @@
+.calendar-page {
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+    padding: 20px;
+    text-align: left;
+}
+  
+mat-form-field {
+    width: 100%;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.div-tools {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-end;
+}
+
+.module-filters {
+    padding: 20px;
+    width: 400px;
+    vertical-align: bottom;
+}
+
+/* Estilos tareas semanales */
+.week-tasks {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.day-tasks {
+    background-color: azure;
+    width: 17vw;
+    height: 900px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.day-header {
+    display: flex;
+    justify-content: center;
+    background-color: #a8d9e2;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.nothing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    white-space: pre-wrap;
+}

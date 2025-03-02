@@ -5,4 +5,5 @@ export interface Module {
     course: string;
     description: string;
     banner: string;
+    visible: boolean;
 }
