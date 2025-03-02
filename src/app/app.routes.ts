@@ -10,6 +10,5 @@ export const routes: Routes = [
     { path: 'pending-tasks', component: PendingTasksComponent },
     { path: 'module/:id', component: ModuleComponent },
     { path: 'task/:id', component: TaskPageComponent },
-    // { path: 'add-class', component: AddClassComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

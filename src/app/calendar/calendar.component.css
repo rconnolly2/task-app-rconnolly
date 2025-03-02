@@ -1,9 +1,9 @@
 .calendar-page {
     width: 100%;
-    max-width: 300px;  /* Make the calendar smaller */
-    margin: 0;  /* Remove centering margin */
+    max-width: 300px;
+    margin: 0;
     padding: 20px;
-    text-align: left;  /* Align text to the left */
+    text-align: left;
 }
   
 mat-form-field {
