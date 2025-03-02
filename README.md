@@ -12,20 +12,20 @@ As we discussed before, the main functionality of the app is to provide a user-f
 
 - **Module Page**: In this page, you will be able to access it from the **OPEN** button inside a task component on the home page. It will bring you to the main class page, just like Google Classroom. You will see the banner of the class, the posts made by the teacher, and each post has an image (which is optional). Additionally, each post has real dynamic comments, and you can even make a comment yourself, which will appear. Later on, I will explain how all this works, but spoiler—it’s localStorage. Also, to the left, there is a Homework section that shows all the tasks that HAVE NOT BEEN COMPLETED. However, if you click on the "Show all" button, it will display all...
 
-![Module Page](/docs/img/module.png)
+![Module Page](/docs/img/module.gif)
 
 
 - **Calendar Page**: This page is quite important in my task app. I envisioned, from the very start of the original mockup, having a working calendar where the user selects the start date, just like on Booking.com. The tasks will appear with the same menu as the home page, but for the selected week. Additionally, there is a filter for each subject, so if you are interested in just some subjects, you can filter them! To me, this feels really intuitive and doesn’t overwhelm the user!
 
-![Precio de mercado](/docs/img/calendar.png)
+![Calendar Page](/docs/img/calendar.gif)
 
 - **Pending Page**: The pending page is basically a page where the user can see all the pending tasks they have left in a quick list of tasks. On the top, there is a drop-down menu which allows the user to switch between pending tasks, completed tasks, or all tasks, which in my opinion is useful! In each task, there is a quick overview: name of the task, deadline, description, grade, etc. From here, you can view the task page, which we will talk about next.
 
-![Pending Page](/docs/img/pending.png)
+![Pending Page](/docs/img/pending.gif)
 
 - **Task Page**: When we click on a task, it will bring us to the specific task page. Here, you will have data like the tutor who assigned the task, the deadline, points, and finally, a button to mark the task as completed, which will then be stored!
 
-![Task Page](/docs/img/task-page.png)
+![Task Page](/docs/img/task.gif)
 
 ## Problems that have arisen in the course of development.
 
