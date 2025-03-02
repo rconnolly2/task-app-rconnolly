@@ -20,7 +20,7 @@ export class TaskService {
 
   getTaskById(id: number): Task | undefined {
     const tasks = this.getAllTasks();
-    return tasks.find(task => task.id === id);
+    return tasks.find(task => task.id === id && task.visible);
   }
 
   markTaskAsComplete(id: number): void {
@@ -40,7 +40,7 @@ export class TaskService {
       const taskDate = new Date(task.deadline);
       const localDate = new Date(taskDate.toLocaleString('en-US', { timeZone: 'Europe/Madrid' }));
       const localDay = localDate.getDay();
-      return localDay === dayOfWeek + 1;
+      return localDay === dayOfWeek + 1 && task.visible;
     });
 
     tasksOnDay.forEach(task => {
@@ -70,7 +70,7 @@ export class TaskService {
       const taskDay = (taskDate.getDay() + 6) % 7;
       return taskDate >= startOfWeek && taskDate <= endOfWeek
           && selectedModules.some(module => module.id === task.moduleId)
-          && taskDay === dayOfWeek;
+          && taskDay === dayOfWeek && task.visible;
     }).forEach(task => {
       if (!tasksByModule[task.moduleId]) {
         tasksByModule[task.moduleId] = [];
@@ -79,6 +79,28 @@ export class TaskService {
     });
 
     return tasksByModule;
+  }
+
+  markTaskAsVisible(id: number): void {
+    const tasks = this.getAllTasks();
+    const task = tasks.find(t => t.id === id);
+    if (task) {
+      task.visible = true;
+      this.saveToLocalStorage(tasks);
+    }
+  }
+
+  markAllTasksAsVisibleByModuleId(moduleId: number): void {
+    const tasks = this.getAllTasks();
+    
+    const updatedTasks = tasks.map(task => {
+      if (task.moduleId === moduleId) {
+        task.visible = true;
+      }
+      return task;
+    });
+  
+    this.saveToLocalStorage(updatedTasks);
   }
 
   private saveToLocalStorage(tasks: Task[]): void {
@@ -99,7 +121,8 @@ export class TaskService {
         description: 'Crear un diseño de interfaz para una web interactiva.',
         deadline: new Date('2025-02-24T23:59:00'),
         grade: undefined,
-        completed: false
+        completed: false,
+        visible: true
       },
       {
         id: 1,
@@ -108,7 +131,8 @@ export class TaskService {
         description: 'Desplegar una aplicación web en un servidor remoto.',
         deadline: new Date('2025-02-25T20:59:00'),
         grade: undefined,
-        completed: true
+        completed: true,
+        visible: true
       },
       {
         id: 2,
@@ -117,7 +141,8 @@ export class TaskService {
         description: 'Diseñar y desarrollar una base de datos para la aplicación.',
         deadline: new Date('2025-02-20T23:59:00'),
         grade: undefined,
-        completed: false
+        completed: false,
+        visible: true
       },
       {
         id: 3,
@@ -126,7 +151,8 @@ export class TaskService {
         description: 'Crear interfaces que se adapten a diferentes dispositivos.',
         deadline: new Date('2025-03-01T10:00:00'),
         grade: undefined,
-        completed: false
+        completed: false,
+        visible: true
       },
       {
         id: 4,
@@ -135,7 +161,8 @@ export class TaskService {
         description: 'Configurar un entorno de integración continua para el proyecto.',
         deadline: new Date('2025-03-05T15:00:00'),
         grade: undefined,
-        completed: true
+        completed: true,
+        visible: true
       },
       {
         id: 5,
@@ -144,7 +171,8 @@ export class TaskService {
         description: 'Crear una interfaz web interactiva usando HTML y JavaScript.',
         deadline: new Date('2025-02-27T23:59:00'),
         grade: undefined,
-        completed: false
+        completed: false,
+        visible: true
       },
       {
         id: 6,
@@ -153,7 +181,8 @@ export class TaskService {
         description: 'Mejorar el tiempo de carga y rendimiento de la web.',
         deadline: new Date('2025-02-28T09:30:00'),
         grade: undefined,
-        completed: false
+        completed: false,
+        visible: true
       },
       {
         id: 7,
@@ -162,7 +191,28 @@ export class TaskService {
         description: 'Escribir y optimizar consultas SQL para la base de datos.',
         deadline: new Date('2025-03-03T12:00:00'),
         grade: undefined,
-        completed: false
+        completed: false,
+        visible: true
+      },
+      {
+        id: 8,
+        moduleId: 5,
+        name: 'Tarjeta Sanitaria Europea - Solicitud',
+        description: 'Instrucciones para solicitar la Tarjeta Sanitaria Europea.',
+        deadline: new Date('2025-02-26T09:00:00'),
+        grade: undefined,
+        completed: false,
+        visible: false
+      },
+      {
+        id: 9,
+        moduleId: 5,
+        name: 'Datos de cobertura del seguro - Tarjeta Sanitaria Europea',
+        description: 'Información adicional sobre los datos de cobertura del seguro relacionados con la Tarjeta Sanitaria Europea.',
+        deadline: new Date('2025-02-26T09:00:00'),
+        grade: undefined,
+        completed: false,
+        visible: false
       }
     ];
   }

@@ -6,4 +6,5 @@ export interface Task {
     deadline: Date;
     grade: number | undefined;
     completed: boolean;
+    visible: boolean;
 }
